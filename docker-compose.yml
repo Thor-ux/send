@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  mailer:
+    build: .
+    container_name: mailer
+    ports:
+      - "80:80"
+    environment:
+      - SMTP_HOST=email-smtp.us-east-2.amazonaws.com
+      - SMTP_PORT=2587
+      - SMTP_USER=AKIA4SHGRZ5CBGUY7U6E
+      - SMTP_PASS=BPwv5PXMAmvtLztYs5n2Zl5QpgrXRL7gWlWZ16KiSiOs
+    volumes:
+      - ./recipients.txt:/app/recipients.txt
+      - ./suppression.json:/app/suppression.json
