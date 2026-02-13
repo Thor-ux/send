@@ -10,12 +10,13 @@
 6. If you send too many emails too quickly, receiving servers (Gmail, Outlook, Yahoo, etc.) may flag your IP/do>
 7. Gradual increase is key — called “IP/domain warm-up.”
 
+
+## 👤 Author
+
+Built by Daniel with ☕ and patience.
+
 ```bash
 docker-compose build
 docker-compose up -d
 docker-compose down
 docker logs -f mailer
-
-## 👤 Author
-
-Built by Daniel with ☕ and patience.
