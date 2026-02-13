@@ -18,8 +18,8 @@ func LoadConfig() Config {
                 SMTPPort:    os.Getenv("SMTP_PORT"),
                 SMTPUser:    os.Getenv("SMTP_USER"),
                 SMTPPass:    os.Getenv("SMTP_PASS"),
-                FromAddress: "LH Contractor Group <hello@lhcontractorgroup.design>",
-                ReturnPath:  "bounce@lhcontractorgroup.design",
-                BaseURL:     "https://lhcontractorgroup.design",
+                FromAddress: "LH Contractor Group <hello@domain.com>",
+                ReturnPath:  "bounce@domain.com",
+                BaseURL:     "https://domain.com", 
         }
 }

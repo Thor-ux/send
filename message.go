@@ -19,7 +19,7 @@ func buildMessage(to, subject, htmlBody string) string {
         // Prevent header injection
         subject = sanitizeHeader(subject)
 
-        messageID := fmt.Sprintf("<%s@lhcontractorgroup.design>", uuid.NewString())
+        messageID := fmt.Sprintf("<%s@domain.com>", uuid.NewString())
 
         unsubURL := fmt.Sprintf("%s/unsubscribe?email=%s", cfg.BaseURL, to)
 

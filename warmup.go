@@ -6,7 +6,7 @@ import (
 )
 
 const (
-        DailyLimit       = 50
+        DailyLimit       = 300
         PauseBetweenSend = 5 * time.Second
 )
 
@@ -49,7 +49,7 @@ func startWarmupLoop() {
                         }
 
                         // Send email
-                        err = sendEmail(r, "Welcome to LH Contractor Group", body)
+                        err = sendEmail(r, "ADD SUBJECT", body)
                         if err != nil {
                                 log.Printf("❌ FAILED: %s (%v)", r, err)
                                 continue
