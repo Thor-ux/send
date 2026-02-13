@@ -15,3 +15,7 @@ docker-compose build
 docker-compose up -d
 docker-compose down
 docker logs -f mailer
+
+## 👤 Author
+
+Built by Daniel with ☕ and patience.
