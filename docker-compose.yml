@@ -4,13 +4,15 @@ services:
   mailer:
     build: .
     container_name: mailer
+
     ports:
-      - "" # Can use 80:80 hosted on DigitalOcean
-    environment:
-      - SMTP_HOST="" # SMTP endpoint
-      - SMTP_PORT= # STARTTLS Port
-      - SMTP_USER=""" # SMTP Username
-      - SMTP_PASS=""  # SMTP password
+      - "80:80"
+
+    env_file:
+      - .env
+
     volumes:
       - ./recipients.txt:/app/recipients.txt
       - ./suppression.json:/app/suppression.json
+
+    restart: unless-stopped

@@ -5,26 +5,26 @@ import (
 )
 
 func sendEmail(to, subject, body string) error {
-        if isSuppressed(to) {
-                return nil
-        }
+	if isSuppressed(to) {
+		return nil
+	}
 
-        msg := buildMessage(to, subject, body)
+	msg := buildMessage(to, subject, body)
 
-        auth := smtp.PlainAuth(
-                "",
-                cfg.SMTPUser,
-                cfg.SMTPPass,
-                cfg.SMTPHost,
-        )
+	auth := smtp.PlainAuth(
+		"",
+		cfg.SMTPUser,
+		cfg.SMTPPass,
+		cfg.SMTPHost,
+	)
 
-        err := smtp.SendMail(
-                cfg.SMTPHost+":"+cfg.SMTPPort,
-                auth,
-                cfg.ReturnPath,
-                []string{to},
-                []byte(msg),
-        )
+	err := smtp.SendMail(
+		cfg.SMTPHost+":"+cfg.SMTPPort,
+		auth,
+		cfg.ReturnPath, // envelope sender (bounce address)
+		[]string{to},
+		[]byte(msg),
+	)
 
-        return err
+	return err
 }
